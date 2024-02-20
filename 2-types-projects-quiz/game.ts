@@ -1,6 +1,30 @@
 /**
  * Let's make a game 🕹
  */
+
+type CoordType = { x: number; y: number };
+const position: CoordType = { x: 0, y: 0 };
+
+type DirectionType = 'up' | 'down' | 'left' | 'right';
+function move(direction: DirectionType) {
+  switch (direction) {
+    case 'up':
+      position.y += 1;
+      break;
+    case 'down':
+      position.y -= 1;
+      break;
+    case 'left':
+      position.x -= 1;
+      break;
+    case 'right':
+      position.x += 1;
+      break;
+    default:
+      throw new Error('unknown direction');
+  }
+}
+
 console.log(position); // { x: 0, y: 0}
 move('up');
 console.log(position); // { x: 0, y: 1}
