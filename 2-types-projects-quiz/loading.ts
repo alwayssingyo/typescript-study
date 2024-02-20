@@ -23,4 +23,20 @@
   printLoginState({ state: 'loading' }); // 👀 loading...
   printLoginState({ state: 'success', response: { body: 'loaded' } }); // 😃 loaded
   printLoginState({ state: 'fail', reason: 'no network' }); // 😱 no network
+
+  function printLoginState(obj: ResourceLoadState) {
+    switch (obj.state) {
+      case 'loading':
+        console.log('👀 loading...');
+        break;
+      case 'success':
+        console.log(`😃 ${obj.response.body}`);
+        break;
+      case 'fail':
+        console.log(`😱 ${obj.reason}`);
+        break;
+      default:
+        throw new Error('unknown state');
+    }
+  }
 }
