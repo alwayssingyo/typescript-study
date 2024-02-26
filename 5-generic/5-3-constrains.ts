@@ -49,7 +49,7 @@ console.log(getValue(obj, 'age')); // 20
 console.log(getValue(obj2, 'animal')); // 🐶
 
 // K는 T라는 오브젝트의 키들 중 하나여야 함
-// 리턴되는 것은 오브젝트에 있는 그 키가 가리키고 있는 value 타입이어야 함
+// 리턴되는 것은 오브젝트에 있는 그 키가 가리키고 있는 value
 function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
